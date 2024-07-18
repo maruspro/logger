@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "92a0dce9-c333-4eba-8dad-637ac1787eb6",
+		"name": "Logger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12708531"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "mDNOxQ0QXgfktNYO7p2jpcktb1MChVxy!Bu!Y1Fphkr5LCC0z0wUZxpkwppztKFySvj0hKF37r8PPFfNPGG9LWxmKlCRGiu2NY=hFND?CUp7-x=fbVi=nWeay7XSZSUgGt1iMykaf311tc6NqWNXJNU=zhH84U=QF!vcOhjUL9hz14=YM3ar2eD!=NgWrU2-sjb9vM?Y/lhb12GUMqiT7EDWNAhX??7AzQV7-H!5ZrBe!jRZWJV-Gf8PKn1xgJSR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://logger/api/v1/logs",
+					"protocol": "http",
+					"host": [
+						"logger"
+					],
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "mDNOxQ0QXgfktNYO7p2jpcktb1MChVxy!Bu!Y1Fphkr5LCC0z0wUZxpkwppztKFySvj0hKF37r8PPFfNPGG9LWxmKlCRGiu2NY=hFND?CUp7-x=fbVi=nWeay7XSZSUgGt1iMykaf311tc6NqWNXJNU=zhH84U=QF!vcOhjUL9hz14=YM3ar2eD!=NgWrU2-sjb9vM?Y/lhb12GUMqiT7EDWNAhX??7AzQV7-H!5ZrBe!jRZWJV-Gf8PKn1xgJSR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": \"testst\",\r\n    \"message\": \"error message text\",\r\n    \"level\": 2,\r\n    \"userId\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://logger/api/v1/logs",
+					"protocol": "http",
+					"host": [
+						"logger"
+					],
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "mDNOxQ0QXgfktNYO7p2jpcktb1MChVxy!Bu!Y1Fphkr5LCC0z0wUZxpkwppztKFySvj0hKF37r8PPFfNPGG9LWxmKlCRGiu2NY=hFND?CUp7-x=fbVi=nWeay7XSZSUgGt1iMykaf311tc6NqWNXJNU=zhH84U=QF!vcOhjUL9hz14=YM3ar2eD!=NgWrU2-sjb9vM?Y/lhb12GUMqiT7EDWNAhX??7AzQV7-H!5ZrBe!jRZWJV-Gf8PKn1xgJSR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://logger/api/v1/logs/8",
+					"protocol": "http",
+					"host": [
+						"logger"
+					],
+					"path": [
+						"api",
+						"v1",
+						"logs",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
