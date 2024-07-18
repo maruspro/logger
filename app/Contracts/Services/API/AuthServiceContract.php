@@ -13,10 +13,4 @@ interface AuthServiceContract
      * @return bool
      */
     public function isAuth(Request $request): bool;
-
-    /**
-     * @param Request $request
-     * @return bool
-     */
-    public function isJson(Request $request): bool;
 }
