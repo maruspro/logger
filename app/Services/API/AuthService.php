@@ -40,19 +40,4 @@ class AuthService implements AuthServiceContract
 
         return true;
     }
-
-    /**
-     * @param Request $request
-     * @return bool
-     */
-    public function isJson(Request $request): bool
-    {
-        json_decode($request->getContent());
-
-        if (json_last_error() != JSON_ERROR_NONE) {
-            return false;
-        }
-
-        return true;
-    }
 }
