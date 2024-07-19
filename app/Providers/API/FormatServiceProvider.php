@@ -7,6 +7,7 @@ namespace App\Providers\API;
 use App\Contracts\Services\API\AuthServiceContract;
 use App\Contracts\Services\API\FormatServiceContract;
 use App\Services\API\AuthService;
+use App\Services\API\FormatService;
 use Carbon\Laravel\ServiceProvider;
 
 class FormatServiceProvider extends ServiceProvider
@@ -18,7 +19,7 @@ class FormatServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(FormatServiceContract::class, fn() => new AuthService(config('auth.access_token')));
+        $this->app->bind(FormatServiceContract::class, FormatService::class);
     }
 
     /**

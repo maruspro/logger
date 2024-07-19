@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace App\Services\API;
 
 use App\Contracts\Services\API\FormatServiceContract;
+use App\Helpers\JsonHelper;
 use Illuminate\Http\Request;
 
 class FormatService implements FormatServiceContract
@@ -15,12 +16,8 @@ class FormatService implements FormatServiceContract
      */
     public function isJson(Request $request): bool
     {
-        json_decode($request->getContent());
+        JsonHelper::decode($request->getContent());
 
-        if (json_last_error() != JSON_ERROR_NONE) {
-            return false;
-        }
-
-        return true;
+        return JsonHelper::checkError();
     }
 }

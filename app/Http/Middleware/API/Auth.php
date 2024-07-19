@@ -27,7 +27,7 @@ class Auth
      * @return mixed
      * @throws Exception
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
         if (!app(AuthServiceContract::class)->isAuth($request)) {
             return $this->apiResponseUnauthorized(LangHelper::getTrans('app.incorrect_auth'));

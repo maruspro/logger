@@ -5,19 +5,17 @@ declare(strict_types = 1);
 namespace App\Services\API;
 
 use App\Contracts\Services\API\AuthServiceContract;
+use App\Helpers\AppHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class AuthService implements AuthServiceContract
 {
     /**
      * @param string $token
      */
-    public function __construct
-    (
-        private readonly string $token
-    )
+    public function __construct(private readonly string $token)
     {
-
     }
 
     /**
@@ -26,18 +24,12 @@ class AuthService implements AuthServiceContract
      */
     public function isAuth(Request $request): bool
     {
-        $request->headers->set('Accept', 'application/json');
+        AppHelper::setHeader($request,'Content-Type', 'application/json');
 
-        $token = $request->header('X-Access-Token');
+        AppHelper::isLocal();
 
-        if (app()->isLocal()) {
-            return true;
-        }
+        $token = AppHelper::getHeader($request, 'X-Access-Token');
 
-        if (empty($token) || $token !== $this->token) {
-            return false;
-        }
-
-        return true;
+        return AppHelper::checkToken($token, $this->token);
     }
 }
