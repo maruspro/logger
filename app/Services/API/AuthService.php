@@ -24,7 +24,7 @@ class AuthService implements AuthServiceContract
      */
     public function isAuth(Request $request): bool
     {
-        AppHelper::setHeader($request,'Content-Type', 'application/json');
+        AppHelper::setHeader($request, 'Content-Type', 'application/json');
 
         AppHelper::isLocal();
 
