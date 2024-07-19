@@ -7,7 +7,6 @@ namespace App\Services\API;
 use App\Contracts\Services\API\AuthServiceContract;
 use App\Helpers\AppHelper;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class AuthService implements AuthServiceContract
 {
